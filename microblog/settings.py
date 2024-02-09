@@ -15,8 +15,8 @@ import os
 # ↓ 追加
 import environ
 import dotenv
-import decouple
-# from decouple import config
+# import decouple
+from decouple import config as decouple_config
 from dj_database_url import parse as dburl
 
 
@@ -107,7 +107,7 @@ WSGI_APPLICATION = 'microblog.wsgi.application'
 default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
 
 DATABASES = {
-    "default": config("DATABASE_URL", default=default_dburl, cast=dburl),
+    "default": decouple_config("DATABASE_URL", default=default_dburl, cast=dburl),
 }
 
 
