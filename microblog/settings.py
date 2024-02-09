@@ -53,10 +53,10 @@ INSTALLED_APPS = [
     # "blog",
     'django_bootstrap5',
     "microblog",
-    # 'blogapp.apps.BlogConfig.name',
+    'blogapp.apps.BlogConfig.name',
     # 'blog.apps.BlogConfig',
     'blogapp.apps.AppConfig', # 追加
-    'blogapp.apps.BlogAppConfig',
+    # 'blogapp.apps.BlogAppConfig',
     
 ]
 
