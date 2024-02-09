@@ -15,8 +15,8 @@ import os
 # ↓ 追加
 import environ
 import dotenv
-import decouple
-# from decouple import config
+# import decouple
+from decouple import config
 from dj_database_url import parse as dburl
 
 
