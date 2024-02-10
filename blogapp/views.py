@@ -51,8 +51,8 @@ def post_detail(request, slug):
             comment = form.save(commit=False)
             comment.post = post
             comment.save()
-            return redirect("post_detail", slug=post.slug)
+            return redirect("post-01", slug=post.slug)
     else:
         form = CommentForm()
-    return render(request, "blogapp/post_detail.html", {"post": post, "form": form})
+    return render(request, "blogapp/post-01.html", {"post": post, "form": form})
 
