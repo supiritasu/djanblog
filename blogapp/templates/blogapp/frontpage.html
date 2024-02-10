@@ -1,0 +1,62 @@
+{% extends "blogapp/base.html" %}
+{% load static %}
+{% block content %} 
+
+    <section class="section">
+        <div class="hero">
+            <div class="hero1">
+                <img src="media/hero1.jpeg"  alt="hero1">
+            </div>
+            <div class="hero2">
+                <img src="media/hero2.jpeg"  alt="hero2">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container">
+            <h1 class="post-list" id="post-list">記事一覧</h1>
+                <div class="post-grid">
+                {% for post in posts %}
+                    <div class="post-block">
+                        <h2 class="subtitle">{{ post.title }}</h2>
+                            <small>投稿日: {{ post.posted }}</small>
+                            <p>{{ post.intro }}</p>
+                            {% if post.image %}
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                                <img src="{{ post.image.url }}" class="post-image" alt="{{ post.title }}">
+                            </a>
+                            {% endif %}
+                    </div>
+                {% endfor %}
+                </div>
+        </div>
+    </section>
+    
+    <section class="section section-secounday">
+        <h1 class="section-headline" id="contact">お問い合わせ</h1>
+        <div class="contact-form-container">
+            <form action="." method="post">
+                {% csrf_token %}
+                <div class="form-row">
+                    <label for="id_name">お名前</label>
+                    <div>{{ contact.name }}</div>
+                </div>
+                <div class="form-row">
+                    <label for="id_email">メールアドレス</label>
+                    <div>{{ contact.email }}</div>
+                </div>
+                <div class="form-row">
+                    <label for="id_message">お問い合わせ内容</label>
+                    <div>{{ contact.message }}</div>
+                </div>
+                <div class="form-row control">
+                    <button type="submit" id="submit-button" class="contact-send" onclick="SuccessPOP()">送信</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+  
+{% endblock %}
