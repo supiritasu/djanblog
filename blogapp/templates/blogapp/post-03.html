@@ -1,0 +1,87 @@
+{% extends "blogapp/base.html" %}
+{% load static %}
+
+{% block content %}
+    <head>
+        <link rel="stylesheet" href="{% static 'css/post-detail.css' %}" type="text/css"> 
+    </head>
+
+    <section class="post-content">
+        <div class="post-explain">
+            <div class="post-detail">
+                <h1 class="title">{{post.title}}</h2>
+                <small>Posted at {{post.posted}}</small>
+                <p>{{post.intro}}</p>
+                <p>{{post.body}}</p>
+                <hr />
+
+
+                <p>
+                    bbbbbbbbbbbbbbbbbbbbbbb．
+                </p>
+                <h2 id="kadai1">
+                    課題１
+                </h2>
+                <p>
+                    HSV 色空間は色相 (Hue)，彩度 (Saturation)，明度(Value) で構成された色空間である
+                </p>
+
+                <h3 id="kadai1-2">HSVの利点</h3>
+                <p>
+                    色の表現方法としてよく使われているRGBは「原色の組み合わせ」で色を表現しているが，この方法だと各要素を変動させた場合に色がどう変化するかがイメージしにくく，細かな色の調整をしたい場合などには不向きである．一方，HSVでは色を「鮮やかさ」「明るさ」といった直感的にわかりやすい方法で表現しているため，「この色を明るくしたい・暗くしたい」「色を薄くしたい・濃くしたい」といった感覚的な調整が簡単にできる．
+                </p>
+                <h3 id="kadai1-3">色相，彩度，明度</h3>
+                <p>・色相，彩度，明度について以下に説明する．</p>
+                <ul>
+                    <li>色相：赤や緑といった具体的な色を定義する要
+                        素である (0°～360°の範囲の値で表される)</li>
+                    <li>彩度：色相で定義された色の鮮やかさ・濃さを
+                        表す要素である (0%～100%の範囲で表される)</li>
+                    <li>明度：色相で定義された色の明るさ・暗さを表
+                        す要素である (0%～100%の範囲で表される)</li>
+                </ul>
+                
+                <h2 id="kadai2">
+                    課題２
+                </h2>
+                <h3 id="kadai2-1">目的</h3>
+                <p>たわしやくだもの等，色の異なる二つの物体のみを検出して，表示するプログラムを作成する．                </p>
+
+                <h3 id="kadai2-2">手法</h3>
+                <p>今回の実験で用いたプログラムをリスト 1 に示す．リスト 1 は赤色，青色について HSV 色空間の値範囲を設定したもである．それぞれのマスク画像，結果画像ついてはサンプルコードを複製することで複数色の抽出を実現した．                </p>
+                <h3 id="kadai2-3">結果</h3>
+
+                <div class="code-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
+                    <span class="copy-message" style="display: none;">Copied!</span>
+                    <pre><code class="language-python">
+# Threshold the HSV image to get red color
+lower_red = np.array([0, 50, 50])
+upper_red = np.array([10, 255, 255])
+
+# Threshold the HSV image to get blue color
+lower_blue = np.array([100, 50, 50])
+upper_blue = np.array([140, 255, 255])
+
+if MJPGSTREAMER == False:
+# Use webcam
+cap = cv2.VideoCapture(0)
+cap.set(3, WIDTH)
+cap.set(4, HEIGHT)
+else:
+    cap = cv2.VideoCapture(MJPGURI)
+                    </code></pre>
+                </div>                
+              
+        </div>
+        
+
+        <div class="post-nav">
+            <h3>目次</h3>
+            <div class="post-nav-content" id="toc">
+            </div>
+        </div>
+    </section>
+
+
+{%endblock%}
