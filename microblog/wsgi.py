@@ -19,7 +19,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 dotenv.load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'microblog.settings')
-
+BASIC_AUTH_USERNAME = os.getenv("BASIC_AUTH_USERNAME")
+BASIC_AUTH_PASSWORD = os.getenv("BASIC_AUTH_PASSWORD")
 # Basic認証を設定
 application = BasicAuth(get_wsgi_application())
 
