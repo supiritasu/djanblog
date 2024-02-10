@@ -44,6 +44,9 @@ def frontpage(request):
 
 def post_detail(request, slug):
     post = Post.objects.get(slug=slug)
+    # slug から番号を抽出 (例: "post-01" から "01" を抽出)
+    slug_number = slug.split('-')[-1]
+
     if request.method == "POST":
         form = CommentForm(request.POST)
         
@@ -51,7 +54,8 @@ def post_detail(request, slug):
             comment = form.save(commit=False)
             comment.post = post
             comment.save()
-            return redirect("post-01", slug=post.slug)
+            # 抽出した番号を使ってリダイレクト先を動的に指定
+            return redirect(f"post-{slug_number}", slug=post.slug)
     else:
         form = CommentForm()
     return render(request, "blogapp/post-01.html", {"post": post, "form": form})
