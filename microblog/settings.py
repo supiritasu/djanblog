@@ -181,7 +181,7 @@ BASIC_AUTH_PASSWORD = env("BASIC_AUTH_PASSWORD")
 
 # EMAIL_HOST_PASSWORD = aqqp xqds xevm ytyu
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
+# try:
+#     from .local_settings import *
+# except ImportError:
+#     pass
