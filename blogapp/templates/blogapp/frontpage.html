@@ -27,7 +27,7 @@
                             <p>{{ post.intro }}</p>
                             {% if post.image %}
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                <img src="{{ post.image.url }}" class="post-image" alt="{{ post.title }}">
+                                <img src="{{ post.image }}" class="post-image" alt="{{ post.title }}">
                             </a>
                             {% endif %}
                     </div>
