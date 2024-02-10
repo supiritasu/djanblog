@@ -9,6 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls), #URLがxxx.comの時，xxx.com/admin
     path("", frontpage),
     path("<slug:slug>/", post_detail, name="post_detail"), #xxx.com/{slug}とし，post_detailを返す(slugは投稿番号)
+
 ]
 
 if settings.DEBUG:

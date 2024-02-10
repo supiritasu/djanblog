@@ -8,6 +8,10 @@ from django.conf import settings
 from django.contrib import messages
 from django.core.mail import EmailMessage
 
+from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
+from .forms import CommentForm
+from .models import Post
 
 # from contact.forms import ContactForm
 
@@ -42,21 +46,25 @@ def frontpage(request):
         contact = ContactForm()
     return render(request, "blogapp/frontpage.html", {"posts": posts, "contact": contact} )
 
+
+
 def post_detail(request, slug):
-    post = Post.objects.get(slug=slug)
+    post = get_object_or_404(Post, slug=slug)
     # slug から番号を抽出 (例: "post-01" から "01" を抽出)
     slug_number = slug.split('-')[-1]
 
     if request.method == "POST":
         form = CommentForm(request.POST)
-        
         if form.is_valid():
             comment = form.save(commit=False)
             comment.post = post
             comment.save()
-            # 抽出した番号を使ってリダイレクト先を動的に指定
-            return redirect(f"post-{slug_number}", slug=post.slug)
+            # reverseを使用してURL名とその引数を指定
+            return redirect(reverse('post_detail', kwargs={'slug': post.slug}))
     else:
         form = CommentForm()
-    return render(request, "blogapp/post-{slug_number}.html", {"post": post, "form": form})
+    # 動的なテンプレート名を指定
+    template_name = f"blogapp/post-detail.html"  # 一般的な命名規則に従って修正
+    return render(request, template_name, {"post": post, "form": form})
+
 
