@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     # 'blogapp.apps.BlogConfig.name',
     # 'blog.apps.BlogConfig',
     # 'blogapp.apps.AppConfig', 
-    'blogapp.apps.BlogAppConfig', # 追加
+    'blogapp.apps.blogappConfig', # 追加
     
 ]
 
