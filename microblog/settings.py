@@ -55,8 +55,8 @@ INSTALLED_APPS = [
     "microblog",
     # 'blogapp.apps.BlogConfig.name',
     # 'blog.apps.BlogConfig',
-    'blogapp.apps.AppConfig', # 追加
-    'blogapp.apps.blogappConfig',
+    # 'blogapp.apps.AppConfig', 
+    'blogapp.apps.BlogAppConfig', # 追加
     
 ]
 
