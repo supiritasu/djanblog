@@ -167,8 +167,9 @@ SUPERUSER_EMAIL = env("SUPERUSER_EMAIL")
 SUPERUSER_PASSWORD = env("SUPERUSER_PASSWORD")
 
 #Gmail
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+
+
+# EMAIL_HOST_PASSWORD = aqqp xqds xevm ytyu
 
 try:
     from .local_settings import *
