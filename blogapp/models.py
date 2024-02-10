@@ -16,7 +16,8 @@ class Post(models.Model):
     slug = models.SlugField()
     intro = models.TextField()
     body = models.TextField()
-    image = models.URLField(blank=True, null=True, max_length=500)   # 画像URLを保存するフィールド
+    # image = models.URLField(blank=True, null=True, max_length=500)   
+    image = models.CharField(max_length=500, blank=True, null=True) # 画像URLを保存するフィールド
     posted = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.title #dbのタイトルをブログタイトルに変更
