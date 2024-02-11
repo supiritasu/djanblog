@@ -12,7 +12,7 @@ urlpatterns = [
     path('googled6cb1cfdea5ad30b.html/', google_search_console, name='google_search_console'),
 ]
 
-if settings.DEBUG:
+if settings.DEBUG != True:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     
 

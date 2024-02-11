@@ -1,8 +1,0 @@
-<!-- blogapp/templates/blogapp/edit_post.html -->
-
-<h1>記事を編集</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">保存</button>
-</form>
