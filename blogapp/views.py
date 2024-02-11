@@ -62,3 +62,5 @@ def post_detail(request, slug):
 
     return render(request, template_name, {"post": post, "form": form})
 
+def google_search_console(request):
+    return render(request, 'google/googled6cb1cfdea5ad30b.html')
