@@ -48,6 +48,7 @@ header
   color: #FFFFFF;
   margin: 0 50px 0px 0px;
   white-space: nowrap;
+  text-decoration: none; /* 下線を消す */
 }
 
 
