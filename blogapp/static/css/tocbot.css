@@ -18,7 +18,7 @@
 
 a.toc-link {
     color: currentColor;
-    height: 20%;
+    height: 20%; /* 目次バー調整 */
 }
 
 .is-collapsible {
