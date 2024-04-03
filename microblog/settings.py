@@ -125,7 +125,18 @@ default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
 #     }
 # }
 
-DATABASES = {}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'djanpost',
+        'USER': 'supiritasu',
+        'PASSWORD': 'shinjuku3317',
+        'HOST': 'djanpost',
+        'PORT': '849',
+    }
+}
+
+
 
 
 # Password validation
