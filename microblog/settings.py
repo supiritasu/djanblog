@@ -107,7 +107,7 @@ WSGI_APPLICATION = 'microblog.wsgi.application'
 # }
 
 # ↓ 追加
-default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
+# default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
 
 # DATABASES = {
 #     "default": decouple_config("DATABASE_URL", default=default_dburl, cast=dburl),
@@ -128,11 +128,11 @@ default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djanpost',
+        'NAME': 'djanblogvercel-postgres',
         'USER': 'supiritasu',
         'PASSWORD': 'shinjuku3317',
-        'HOST': 'djanpost',
-        'PORT': '849',
+        'HOST': 'ep-ancient-glitter-a15ddqf9-pooler.ap-southeast-1.aws.neon.tech',
+        'PORT': '5432',
     }
 }
 
