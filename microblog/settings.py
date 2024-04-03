@@ -18,6 +18,7 @@ import dotenv
 # import decouple
 from decouple import config as decouple_config
 from dj_database_url import parse as dburl
+import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -99,12 +100,12 @@ WSGI_APPLICATION = 'microblog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # ↓ 追加
 # default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
@@ -125,18 +126,19 @@ WSGI_APPLICATION = 'microblog.wsgi.application'
 #     }
 # }
 
+DATABASES['default'] = dj_database_url.config()
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get("POSTGRES_NAME"),
-        'USER': os.environ.get("POSTGRES_USER"),
-        'PASSWORD': os.environ.get("POSTGRES_PASSWORD"),
-        'HOST': os.environ.get("POSTGRES_HOST"),
-        'PORT': os.environ.get("POSTGRES_PORT"),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': os.environ.get("POSTGRES_NAME"),
+#         'USER': os.environ.get("POSTGRES_USER"),
+#         'PASSWORD': os.environ.get("POSTGRES_PASSWORD"),
+#         'HOST': os.environ.get("POSTGRES_HOST"),
+#         'PORT': os.environ.get("POSTGRES_PORT"),
+#     }
+# }
 
 
 # Password validation
