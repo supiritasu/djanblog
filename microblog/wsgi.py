@@ -24,3 +24,11 @@ BASIC_AUTH_PASSWORD = os.getenv("BASIC_AUTH_PASSWORD")
 # Basic認証を設定
 application = BasicAuth(get_wsgi_application())
 
+import os
+
+from django.core.wsgi import get_wsgi_application
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'microblog.settings')
+
+application = get_wsgi_application()
+app = application
