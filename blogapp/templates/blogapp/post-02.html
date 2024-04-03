@@ -4,7 +4,47 @@
 {% block content %}
     <head>
         <link rel="stylesheet" href="{% static 'css/post-detail.css' %}" type="text/css"> 
+        <style>
+
+            .post-detail img {
+                max-width:100%; 
+                height: auto; 
+                border-radius: 20px; 
+            }
+            
+            .one-image{
+                display: grid;
+                grid-template-columns: 1fr 1fr; 
+                gap: 30px; 
+                padding: 3%;
+                background-color: #FFFFFF;
+                border-radius: 30px;
+                margin: auto; 
+                max-width:100%;
+            }
+
+            .two-images{
+                display: grid;
+                grid-template-columns: 1fr 1fr; 
+                gap: 30px; 
+                padding: 3%;
+                background-color: #FFFFFF;
+                border-radius: 30px;
+                margin: auto; 
+                max-width:100%;
+                justify-content: center;
+            }
+
+            .two-images img {
+                width: 100%; 
+                height: auto; 
+                justify-content: center; 
+            }
+        
+            
+        </style>
     </head>
+
 
     <section class="post-content">
         <div class="post-explain">
@@ -16,63 +56,171 @@
                 <hr />
 
 
-                <p>
-                    aaaaaaaaaaaaaaaaaaaaaaaa．
-                </p>
-                <h2 id="kadai1">
-                    課題１
+                <h2 id="bus">
+                    高速バス
                 </h2>
                 <p>
-                    HSV 色空間は色相 (Hue)，彩度 (Saturation)，明度(Value) で構成された色空間である
+                    家を朝6時に出発し，長旅になることがわかっていたのですき家で腹ごしらえ．
+                    早めについたのでバスステーションの待合室で休憩．(何気にこの待合室が快適でよかった．)<br>
+                    朝8時にバスステーション広島駅北口から出発．
+                    何度かサービスエリアに寄りながら約6時間かけて博多バスターミナルに到着．
                 </p>
 
-                <h3 id="kadai1-2">HSVの利点</h3>
-                <p>
-                    色の表現方法としてよく使われているRGBは「原色の組み合わせ」で色を表現しているが，この方法だと各要素を変動させた場合に色がどう変化するかがイメージしにくく，細かな色の調整をしたい場合などには不向きである．一方，HSVでは色を「鮮やかさ」「明るさ」といった直感的にわかりやすい方法で表現しているため，「この色を明るくしたい・暗くしたい」「色を薄くしたい・濃くしたい」といった感覚的な調整が簡単にできる．
-                </p>
-                <h3 id="kadai1-3">色相，彩度，明度</h3>
-                <p>・色相，彩度，明度について以下に説明する．</p>
-                <ul>
-                    <li>色相：赤や緑といった具体的な色を定義する要
-                        素である (0°～360°の範囲の値で表される)</li>
-                    <li>彩度：色相で定義された色の鮮やかさ・濃さを
-                        表す要素である (0%～100%の範囲で表される)</li>
-                    <li>明度：色相で定義された色の明るさ・暗さを表
-                        す要素である (0%～100%の範囲で表される)</li>
-                </ul>
+                <div class="two-images">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2F1F3CB1EB-27CC-4157-AC86-22933B54AC7D.JPG?alt=media&token=fd1ea60d-7cc5-4953-aa06-cdb05a4ce59e" alt="ticket">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2FDA57639C-2EFB-438D-A738-5F3089EF2969.JPG?alt=media&token=79baaab8-24c6-40a7-80cb-b88e9c4e5c81" alt="ticket">
+                </div>
+
                 
-                <h2 id="kadai2">
-                    課題２
+                
+                <h2 id="lunch">
+                    昼ごはん
                 </h2>
-                <h3 id="kadai2-1">目的</h3>
-                <p>たわしやくだもの等，色の異なる二つの物体のみを検出して，表示するプログラムを作成する．                </p>
 
-                <h3 id="kadai2-2">手法</h3>
-                <p>今回の実験で用いたプログラムをリスト 1 に示す．リスト 1 は赤色，青色について HSV 色空間の値範囲を設定したもである．それぞれのマスク画像，結果画像ついてはサンプルコードを複製することで複数色の抽出を実現した．                </p>
-                <h3 id="kadai2-3">結果</h3>
+                <p>
+                    昼ごはんは検索上位に出てきた一幸舎の総本店に行きました！博多駅から歩いて約5分とアクセスはかなり良いです．今回，私は豚骨ラーメンとチャーマヨ丼を頼みました．
+                    このお店の豚骨ラーメンは通常のお店とは違い，豚骨の泡がたったスープのラーメンです．濃い味付けでありながら，スープには臭みがなく非常に美味しかったです．
+                    セットで頼んだチャーマヨ丼ですが，こちらもチャーシューが非常に柔らかくとても美味しかったです．
+                </p>
 
-                <div class="code-container">
-                    <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
-                    <span class="copy-message" style="display: none;">Copied!</span>
-                    <pre><code class="language-python">
-# Threshold the HSV image to get red color
-lower_red = np.array([0, 50, 50])
-upper_red = np.array([10, 255, 255])
+                <div class="two-images">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2F1E3B8F2A-AD19-4DCA-BD4E-2B96A4C5A5A2.JPG?alt=media&token=3a935d6d-c94b-4413-b49f-3f0124aa3953" alt="ラーメン">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2F0F7493A2-45F7-48D2-AACD-CFCA011844F5.JPG?alt=media&token=8b13945f-27bf-4403-a65e-25b884446b68" alt="ラーメン">
+                </div>
 
-# Threshold the HSV image to get blue color
-lower_blue = np.array([100, 50, 50])
-upper_blue = np.array([140, 255, 255])
+                <h2 id="sanpo0">
+                    1日乗車券
+                </h2>
+                <p>
+                    今回，博多市内を観光するにあたって大活躍したのがこちらの1日乗車券！(天神駅の券売機で購入)<br>
+                    640円で地下鉄線内(姪浜～福岡空港，中洲川端～貝塚，橋本～博多)を移動することができます！
+                </p>
+                <div class="two-images">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2F756765B5-FEA0-4269-81F9-A2AEDD4B9484.JPG?alt=media&token=db86d1ff-2eba-45e9-97a8-8b57de2ba647" alt="ticket">
+                
+                </div>
+                
+                
+                <h2 id="sanpo!">
+                    市内散策1
+                </h2>
 
-if MJPGSTREAMER == False:
-# Use webcam
-cap = cv2.VideoCapture(0)
-cap.set(3, WIDTH)
-cap.set(4, HEIGHT)
-else:
-    cap = cv2.VideoCapture(MJPGURI)
-                    </code></pre>
-                </div>                
-              
+                <h3 id="sanpo1-1">
+                    福岡空港
+                </h3>
+                
+                <p>
+                    まず最初に赴いたのは福岡空港！福岡空港は博多駅から地下鉄で2駅4分というアクセスの良さ，便利すぎますね．<br>
+                    国際線，国内線ともにあるので1時間でも相当な数の飛行機が発着します．
+                    空港には展望デッキがあり，飛行機の離着陸を近くで見ることができます．見るだけでも十分楽しく，気が付けば1時間以上経過してしまいましたね．．．
+                </p>
+
+                <div class="two-images">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2FDFA75BF7-936D-4B41-888F-FF1EAE1CD539.JPG?alt=media&token=9fd18a8a-ee5b-4cd2-9420-893f861d7f3b" alt="ラーメン">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2F065BD9D7-0CCD-4B95-9B79-A0861DA25AEA.JPG?alt=media&token=a698c0be-3da0-4b2c-91d3-d1f46187d3b8" alt="ラーメン">
+                </div>
+
+
+                <h3 id="sanpo1-2">
+                    paypayドーム
+                </h3>
+                
+                <p>
+                    お次はpaypayドーム！
+                </p>
+
+                <div class="two-images">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2FF592AB3D-BB21-4EF9-B8D4-B62B92C43ABA.JPG?alt=media&token=d12ca28d-07ac-4656-b2a9-4b2b4b1625c4" alt="ticket">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2FF7C62E78-9EEC-4612-9BD2-02CFADFBBC04.JPG?alt=media&token=a29c3118-0752-4a5d-969b-b9c3544eceb3" alt="ticket">
+
+                </div>
+
+                
+                
+                
+                <h3 id="sanpo1-3">
+                    福岡タワー
+                </h3>
+                <p>
+                    市内散策は福岡タワーで一区切り！ペラッペラ！！！
+                </p>
+
+                <div class="two-images">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2F68A87F07-DEC3-42B3-B863-AD9115FAEA4A.JPG?alt=media&token=8f52bafe-1f27-4b76-857e-d35828c7c993" alt="ticket">
+                </div>
+
+
+                
+
+
+                <h2 id="dinner">
+                    晩ごはん
+                </h2>
+
+                <p>
+                    結構な距離移動したのでさすがにお腹が減ってきました．晩御飯は友達に教えてもらった「ひらお」という天ぷら屋に来ました！
+                    この天ぷら屋さんはカウンター席のみで，天ぷらは揚げたてが順に提供される仕組みになっています．(なので全ての食材が来てから写真を撮ろうとすると冷めてしまう)<br>
+                    出来立ての天ぷらが提供されるのでどれも衣がサクサクで非常に美味しかったです！！！当然，非常に熱いので猫舌の方はお気を付けください．
+                </p>
+
+                <div class="two-images">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2F5F0E17AD-7D47-470A-A1D4-04555D605FC1.JPG?alt=media&token=16851f5d-439c-4a26-8181-632c4c914722" alt="ticket">
+                    {% comment %} <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2FE4B9D55F-67C2-48F8-AEDA-9268A8DB131A.JPG?alt=media&token=0caaeb80-1300-42aa-960c-bbe5adad9918" alt="ticket"> {% endcomment %}
+                    <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2FA6BE4867-F5E6-45D2-B73E-0B657CAE7B61.JPG?alt=media&token=7c1f0e0e-19d8-46b8-b8f5-eadb06e3e30c" alt="ticket">
+                    
+                </div>
+
+                <h2 id="sanpo2">
+                    市内散策2
+                </h2>
+
+                
+
+
+                <h3 id="sanpo2-1">
+                    大濠公園
+                </h3>
+                <p>
+                    晩御飯の後は大濠公園を散歩しました！こちらも博多駅から地下鉄で約10分と非常にアクセスが良いです．
+                    公園内にある一部の木々はライトアップされていてとても綺麗でした．また，公園内には浮見堂と呼ばれる建物があり，池全体の様子を見渡すことができます！
+                    夜9時ごろに訪れたのですが公園の周りを走っている人がたくさんいました．景色が綺麗で，風も心地よいので運動するにはうってつけですね！
+                </p>
+                
+                <div class="two-images">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2F4F9731C4-3958-49EF-9756-AD4CB803AF11.JPG?alt=media&token=21a674d2-4186-4a83-9c6d-5e933567ed81" alt="ticket">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2F5DBFC816-393D-4536-B556-6F8B82857BCB.JPG?alt=media&token=36bf06ef-529d-4897-890a-ade8695f7700" alt="ticket">
+                </div>
+
+
+                <h3 id="sanpo2-2">
+                    中洲屋台
+                </h3>
+
+                <p>
+                    中洲の屋台は人が多すぎてどのお店も入れる感じではなかったので，雰囲気だけ味わってすぐに退散〜〜〜
+                </p>
+
+                <div class="two-images">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2F2A6E66CF-8AE5-47D3-A85B-9F93419CD46C.JPG?alt=media&token=16662f84-d796-442c-a4e3-ef59b5d5c153" alt="ticket">
+                </div>
+
+
+                <h2 id="desert">
+                    デザート
+                </h2>
+                <p>
+                    cafe KIKUYAという超オシャレなカフェにやってきました．普段，1人でお店に入ることができないタイプの人間なのでだいぶ勇気を出して入店しました．<br>
+                    今回，私はカフェモカ(アイス)と期間限定のプリン(名前忘れた...)を注文しました！プリンがとても濃厚で，弾力があり，それでいて非常になめらかで美味しすぎました．<br>
+                    カフェモカの苦味とプリンの甘味が相性抜群でいくらでも食べられそう！
+                </p>
+                <div class="two-images">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2FFE139C72-42D5-434F-9025-278B7FAE8F0D.JPG?alt=media&token=cf463208-ed8d-4709-8521-56dab2c9ac2e" alt="ticket">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2FEB387779-B6D2-448F-A943-4D3F66E4ECA7.JPG?alt=media&token=96e7c3a0-2030-45d8-9f2b-157c5e82c3ba" alt="ticket">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/djanblog-bf8a7.appspot.com/o/post-02%2FA07064F0-A06D-4586-B6AC-2F2DEB7CC010.JPG?alt=media&token=15ed1ac6-3db5-4479-b507-8a623d5018e7" alt="ticket">
+
+                </div>
+                
+                
         </div>
         
 
