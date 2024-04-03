@@ -204,12 +204,3 @@ BASIC_AUTH_USERNAME = os.getenv("BASIC_AUTH_USERNAME")
 BASIC_AUTH_PASSWORD = os.getenv("BASIC_AUTH_PASSWORD")
 
 
-#Gmail
-
-
-# EMAIL_HOST_PASSWORD = aqqp xqds xevm ytyu
-
-# try:
-#     from .local_settings import *
-# except ImportError:
-#     pass
