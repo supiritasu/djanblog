@@ -177,7 +177,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # 本番用の静的ファイルを集める場所
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'blogapp/static')
 
 # 開発中にDjangoが静的ファイルを探す追加の場所
 STATICFILES_DIRS = [
