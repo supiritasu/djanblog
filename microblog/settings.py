@@ -39,7 +39,7 @@ DEBUG = True
 # DEBUG = False
 
 # ALLOWED_HOSTS = ['192.168.11.8', 'localhost', '127.0.0.1', '192.168.11.13', '192.168.11.14']
-ALLOWED_HOSTS = ['127.0.0.1', 'djanblog.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'djanblog.onrender.com', '.vercel.app']
 
 
 # Application definition
@@ -109,9 +109,11 @@ WSGI_APPLICATION = 'microblog.wsgi.application'
 # ↓ 追加
 default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
 
-DATABASES = {
-    "default": decouple_config("DATABASE_URL", default=default_dburl, cast=dburl),
-}
+# DATABASES = {
+#     "default": decouple_config("DATABASE_URL", default=default_dburl, cast=dburl),
+# }
+
+DATABASES = {}
 
 
 # Password validation
