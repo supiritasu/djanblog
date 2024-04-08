@@ -175,13 +175,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static'
+STATIC_URL = '/static/'
 # 本番用の静的ファイルを集める場所
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # 開発中にDjangoが静的ファイルを探す追加の場所
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "blogapp/static"),
+    os.path.join(BASE_DIR, "/static"),
 ]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
