@@ -181,8 +181,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # 開発中にDjangoが静的ファイルを探す追加の場所
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "./blogapp/static"),
+    os.path.join(BASE_DIR, "blogapp/static"),
 ]
+
+
+
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
