@@ -177,11 +177,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # 本番用の静的ファイルを集める場所
-STATIC_ROOT = os.path.join(BASE_DIR, 'css')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # 開発中にDjangoが静的ファイルを探す追加の場所
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "blogapp/static"),
+    os.path.join(BASE_DIR, "static"),
 ]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
